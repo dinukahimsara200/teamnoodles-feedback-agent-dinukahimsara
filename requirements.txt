@@ -1,5 +1,0 @@
-langchain-core
-langchain-groq
-pandas
-matplotlib
-python-dotenv
