@@ -15,9 +15,9 @@ load_dotenv()
 
 def generate_response(review_text: str) -> str:
     try:
-        groq_api_key = os.getenv("GROQ_API_KEY")
+        groq_api_key = "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"
         if not groq_api_key:
-            return "Error: GROQ_API_KEY not found in .env file"
+            return "Error: GROQ_API_KEY not found"
 
         # Set up Groq LLM with Llama3
         llm = ChatGroq(
@@ -56,4 +56,5 @@ def generate_response(review_text: str) -> str:
         return response_chain.invoke({"review": review_text})
 
     except Exception as e:
+
         return f"Error: {e}"
