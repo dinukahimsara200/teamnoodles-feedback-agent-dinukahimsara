@@ -1,4 +1,4 @@
-# SteamNoodles Feedback Agent – Dinuka Himsara  
+# SteamNoodles Feedback Agent -- Dinuka Himsara  
 **Repo:** `https://github.com/dinukahimsara/steamnoodles-feedback-agent-dinukahimsara`
 
 ## Overview
@@ -29,4 +29,5 @@ python main.py
 | ----- | ------------------------------------------------- | ------------------------------------------------------------------------------- |
 | 1     | `Great cocktails and Javier was really friendly.` | `Thank you for your kind words! We’re delighted you enjoyed your time with us.` |
 | 2     | `2019-09-01 to 2020-09-01`                        | Displays sentiment trend plot for that range.                                   |
+
 
