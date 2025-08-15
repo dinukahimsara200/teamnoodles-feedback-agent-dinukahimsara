@@ -1,4 +1,3 @@
-```markdown
 # SteamNoodles Feedback Agent – Dinuka Himsara  
 **Repo:** `https://github.com/dinukahimsara/steamnoodles-feedback-agent-dinukahimsara`
 
@@ -8,37 +7,26 @@ Two LangChain + Groq agents for SteamNoodles restaurant chain:
 1. **Agent1** – auto-replies to single reviews  
 2. **Agent2** – plots daily sentiment for **any** user-supplied date range
 
-## Quick Start
+## Setup & Run
+
 ```bash
 git clone https://github.com/dinukahimsara/steamnoodles-feedback-agent-dinukahimsara.git
 cd steamnoodles-feedback-agent-dinukahimsara
 pip install -r requirements.txt
-echo "GROQ_API_KEY=your_key" > .env
 python main.py
 ```
-- Follow the **on-screen prompt** for the date range.  
-- Plot saved as `sentiment_plot.png`.
 
-## Dataset
-Keep only three columns in `reviews.csv`:
-```
-rating_review,review_full,date
-```
-Example row:  
-```
-5,"Awesome ramen","8-Oct-20"
-```
+## Testing
 
-## Manual Use
-```python
-from agent1 import generate_response
-print(generate_response("Food was amazing!"))
+* **Agent 1:** Enter any review text when prompted, get a polite one-sentence reply.
+* **Agent 2:** Uses a `reviews.csv` file in the project root.
+  I downloaded [Madrid\_reviews.csv](https://www.kaggle.com/datasets/inigolopezrioboo/a-tripadvisor-dataset-for-nlp-tasks?resource=download&select=Madrid_reviews.csv) from Kaggle and modified it for testing.
+  Since the dataset is static, inputs like `last 7 days` will not work — use fixed date ranges instead.
 
-from agent2 import plot_sentiment
-plot_sentiment("2020-09-01 to 2020-10-08")
-```
+## Sample
 
-## Author
-Dinuka Himsara – University of Moratuwa – 2025  
-Submitted 15 Aug 2025 ✅
-```
+| Agent | Input                                             | Output Example                                                                  |
+| ----- | ------------------------------------------------- | ------------------------------------------------------------------------------- |
+| 1     | `Great cocktails and Javier was really friendly.` | `Thank you for your kind words! We’re delighted you enjoyed your time with us.` |
+| 2     | `2019-09-01 to 2020-09-01`                        | Displays sentiment trend plot for that range.                                   |
+
